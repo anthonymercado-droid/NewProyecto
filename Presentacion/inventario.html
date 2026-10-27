@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COINOVA | Innovación & Monedas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>COINOVA</h1>
+        <hr>
+    </header>
+
+    <main class="container_inventario">
+        <aside>
+            <button type="button" id="maquinasBtn">Taller</button>
+            <button type="button" id="reportesBtn">Reportes</button>
+            <button type="button" id="inventarioBtn">Inventario</button>
+            <button type="button" id="clientesBtn">Clientes</button>
+            <button type="button" id="volverBtn">Volver al menu</button>
+        </aside>
+
+        <div>
+            <header class="container_header">
+                <div>
+                    <button type="button" id="agregarBtn">Agregar Maquina</button>
+                    <button type="button" id="agregarRepuestoBtn">Agregar Repuesto</button>
+                    <button type="button" id="modificarBtn">Modificar</button>
+                    <button type="button" id="eliminarBtn">Eliminar</button>
+                </div>
+
+                <div>
+                    <input type="search" name="buscar" id="buscarInput">
+                    <button type="button" id="buscarBtn">Buscar</button>
+                </div>
+            </header>
+
+            <table id="tabla-inventario" class="table">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" name="check" id="checkMaquina"></th>
+                        <th>Serial</th>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>Cantidad</th>
+                        <th>Proveedor</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla">
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal para agregar maquina -->
+
+    <div id="Modal_Maquina" class="Modal">
+
+        <div class="Modal_Contenido">
+            <h2>Agregar Maquina</h2>
+            <form id="formMaquina">
+                <label for="Serial">Serial:</label>
+                <input type="text" id="Serial" name="Serial" required>
+
+                <label for="Nombre">Nombre:</label>
+                <input type="text" id="Nombre" name="Nombre" required>
+
+                <label for="Estado">Estado:</label>
+                <select id="Estado-Maquina" required>
+                    <option value="">Seleccione un estado</option>
+                    <option value="Funcionando">Funcionando</option>
+                    <option value="Dañado">Dañado</option>
+                    <option value="Mantenimiento">Mantenimiento</option>
+                </select>
+
+                <label for="Cantidad">Cantidad:</label>
+                <input type="text" id="Cantidad" name="Cantidad" required>
+
+                <label for="Ubicacion">Ubicacion:</label>
+                <input type="text" id="Ubicacion" name="Ubicacion" required>
+
+                <button type="submit" id="guardarBtn">Agregar</button>
+                <button type="button" id="cancelarBtn">Cancelar</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Modal para agregar repuesto -->
+
+    <div id="Modal_Repuesto" class="Modal">
+
+        <div class="Modal_Contenido">
+            <h2>Agregar Repuesto</h2>
+            <form action="Guardar_Repuesto">
+
+                <label for="NombreRepuesto">Nombre:</label>
+                <input type="text" id="NombreRepuesto" name="NombreRepuesto">
+
+                <label for="EstadoRepuesto">Estado:</label>
+                <select id="Estado-Repuesto">
+                    <option value="">Seleccione un estado</option>
+                    <option value="Disponible">Disponible</option>
+                    <option value="Agotado">Agotado</option>
+                    <option value="Por Encargo">Por Encargo</option>
+                </select>
+
+                <label for="CantidadRepuesto">Cantidad:</label>
+                <input type="text" id="CantidadRepuesto" name="CantidadRepuesto">
+
+                <label for="Ubicacion">Ubicacion:</label>
+                <input type="text" id="Ubicacion" name="Ubicacion">
+
+                <label for="Proveedor">Proveedor:</label>
+                <input type="text" id="Proveedor" name="Proveedor">
+
+                <button type="submit" id="guardarRepuestoBtn">Agregar</button>
+                <button type="button" id="cancelarRepuestoBtn">Cancelar</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="Negocio/app.js"></script>
+    <script src="Negocio/Modals.js"></script>
+    <script src="Negocio/botones_menu.js"></script>
+    <script src="Negocio/Tabla.js"></script>
+
+    
+</body>
+
+</html>
