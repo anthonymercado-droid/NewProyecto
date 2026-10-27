@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COINOVA | Innovación & Monedas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>COINOVA</h1>
+    <hr>
+  </header>
+
+  <main class="container">
+    <aside>
+      <button type="button" id="maquinasBtn">Taller</button>
+      <button type="button" id="reportesBtn">Reportes</button>
+      <button type="button" id="inventarioBtn">Inventario</button>
+      <button type="button" id="clientesBtn">Clientes</button>
+      <button type="button" id="volverBtn">Volver al menu</button>
+    </aside>
+
+    <section>
+      <div class="dash">
+        <div class="card">
+          <h2>Total Máquinas</h2>
+          <p id="ID-Maquinas">--</p>
+        </div>
+        <div class="card">
+          <h2>Maquinas Dañadas</h2>
+          <p id="Estado-MaquinasD">--</p>
+        </div>
+        <div class="card">
+          <h2>Maquinas Funcionando</h2>
+          <p id="Estado-MaquinasF">--</p>
+        </div>
+        <div class="card">
+          <h2>Clientes</h2>
+          <p id="ID-Clientes">--</p>
+        </div>
+        <div class="card">
+          <h2>Cantidad de Repuestos</h2>
+          <p id="ID-Repuestos">--</p>
+        </div>
+        <div class="card">
+          <h2>Reportes Disponibles</h2>
+          <p id="ID-Reportes">--</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="Negocio/app.js"></script>
+  <script src="Negocio/botones_menu.js"></script>
+</body>
+
+</html>
