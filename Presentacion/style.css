@@ -219,3 +219,42 @@ section .card h2 {
   background-color: transparent;
   color: white;
 }
+
+/* Estilos de la tabla de reportes */
+
+.Card_Reportes {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 20px 40px 20px;
+  flex: 1;
+}
+
+.table_Reportes {
+  width: calc(100% - 40px);
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.table_Reportes th,
+.table_Reportes td {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.table_Reportes th {
+  background-color: var(--panel);
+  color: white;
+  font-weight: 600;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.table_Reportes td {
+  color: var(--text);
+}
+
+.table_Reportes tr:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
