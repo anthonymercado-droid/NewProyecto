@@ -258,3 +258,26 @@ section .card h2 {
 .table_Reportes tr:hover {
   background-color: rgba(255, 255, 255, 0.04);
 }
+
+/*modal reporte */
+
+.Modal_Contenido_Reporte {
+  background-color: var(--panel);
+  border: 2px solid white;
+  border-radius: var(--radius);
+  width: 90%;
+  max-width: 420px;
+  padding: 25px 30px;
+  color: var(--text);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.Modal_Contenido_Reporte button {
+  
+}
+
+.btn_reporte {
+  padding: 3px 8px;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
