@@ -2,7 +2,7 @@
 
 const btn_inventario = document.getElementById("inventarioBtn");
 const btn_volver = document.getElementById("volverBtn");
-const btn_tienda = document.getElementById("TiendaBtn")
+const btn_tienda = document.getElementById("TiendaBtn");
 
 
 btn_inventario.addEventListener("click", () => {
@@ -15,7 +15,7 @@ btn_volver.addEventListener("click", () => {
     window.location.href = "index.html";
 });
 
-tienda.addEventListener("click", () => {
+btn_tienda.addEventListener("click", () => {
     console.log("Se presiono el boton de tienda");
     window.location.href = "Tienda.html";
 }); 
