@@ -21,4 +21,4 @@ if (btn_tienda)
     btn_tienda.addEventListener("click", () => {
         console.log("Se presiono el boton de tienda");
         window.location.href = "Tienda.html";
-    }); 
+    });
