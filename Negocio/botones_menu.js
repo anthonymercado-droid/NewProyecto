@@ -27,6 +27,6 @@ if (btn_tienda)
 if (btn_Salas)
     btn_Salas.addEventListener("click", () => {
         console.log("Se presiono el boton de la sala de Juegos;")
-        window.location.href = "Salas.html";
+        window.location.href = "Sala.html";
         ;
     })
