@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COINOVA | Innovación & Monedas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>COINOVA</h1>
+        <hr>
+    </header>
+
+    <main class="container">
+        <aside>
+            <button type="button" id="maquinasBtn">Taller</button>
+            <!--<button type="button" id="reportesBtn">Reportes</button>-->
+            <button type="button" id="inventarioBtn">Inventario</button>
+            <button type="button" id="SalasBtn" class="nav-active">Salas</button>
+            <button type="button" id="volverBtn">Volver al menu</button>
+        </aside>
+
+        <section class="container_Salas" id="Salas">
+            <div class="card-sala">
+                <h2 class="nombre-sala">Sala Centro</h2>
+                <p class="info-sala">Máquinas registradas: 4</p>
+                <p class="info-sala">Haz clic en el nombre para ver detalle</p>
+            </div>
+
+            <div class="card-sala">
+                <h2 class="nombre-sala">Centro Comercial Norte</h2>
+                <p class="info-sala">Máquinas registradas: 2</p>
+                <p class="info-sala">Haz clic en el nombre para ver detalle</p>
+            </div>
+
+            <div class="card-sala">
+                <h2 class="nombre-sala">Local Sur</h2>
+                <p class="info-sala">Máquinas registradas: 5</p>
+                <p class="info-sala">Haz clic en el nombre para ver detalle</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de diseño para ver las máquinas de una sala -->
+    <div id="Modal_Sala" class="Modal">
+        <div class="Modal_Contenido Modal_Sala_Contenido">
+            <div class="modal-sala-header">
+                <h2 id="tituloModalSala">Sala Centro</h2>
+                <button type="button" id="cerrarModalSalaX" class="btn-cerrar-x">&times;</button>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Máquina</th>
+                        <th>Estado</th>
+                        <th>Mantenimiento</th>
+                        <th>Información</th>
+                    </tr>
+                </thead>
+                <tbody id="listaMaquinasSala">
+                    <!-- Fila de ejemplo 1 -->
+                    <tr>
+                        <td>Grúa de Peluches #1</td>
+                        <td><span class="badge badge-ok">Funcionando</span></td>
+                        <td><span class="badge badge-ok">Realizado</span></td>
+                        <td>Revisión semanal al día</td>
+                    </tr>
+                    <!-- Fila de ejemplo 2 -->
+                    <tr>
+                        <td>Pinball Clásico</td>
+                        <td><span class="badge badge-bad">No funciona</span></td>
+                        <td><span class="badge badge-warn">Pendiente</span></td>
+                        <td>Revisar monedero</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="modal-sala-footer">
+                <button type="button" id="cerrarModalSalaBtn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Negocio/app.js"></script>
+    <script src="../Negocio/botones_menu.js"></script>
+    <script src="../Negocio/Sala.js"></script>
+</body>
+
+</html>
