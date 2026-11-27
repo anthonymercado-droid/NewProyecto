@@ -601,30 +601,254 @@ section .card.card-info p {
 }
 
 /* =========================================
-   DISEÑO RESPONSIVO (PANTALLAS PEQUEÑAS)
+   SECCIÓN TALLER
    ========================================= */
 
-@media (max-width: 768px) {
-  .container,
-  .container_inventario {
-    grid-template-columns: 1fr;
-  }
-
-  aside {
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding: 12px 16px;
-  }
-
-  aside button {
-    width: auto;
-    flex: 1 1 120px;
-    text-align: center;
-  }
+/* Colores semánticos automáticos para las tarjetas del Taller */
+section .card:has(#Taller-Operativas) {
+  border-top-color: var(--ok);
+}
+section .card:has(#Taller-Operativas) p {
+  color: var(--ok);
 }
 
+section .card:has(#Taller-NoOperativas) {
+  border-top-color: var(--bad);
+}
+section .card:has(#Taller-NoOperativas) p {
+  color: var(--bad);
+}
+
+section .card:has(#Taller-EnReparacion) {
+  border-top-color: var(--warn);
+}
+section .card:has(#Taller-EnReparacion) p {
+  color: var(--warn);
+}
+
+section .card:has(#Taller-CostoTotal) {
+  border-top-color: var(--info);
+}
+section .card:has(#Taller-CostoTotal) p {
+  color: var(--info);
+  font-size: 1.65rem;
+}
+
+/* Botón principal y filtro de la barra de herramientas del Taller */
+#nuevaOrdenBtn {
+  background-color: var(--gold);
+  color: #111827;
+  border-color: var(--gold);
+  font-weight: 600;
+}
+
+#nuevaOrdenBtn:hover {
+  background-color: var(--gold-hover);
+  border-color: var(--gold-hover);
+}
+
+.filtro_taller {
+  padding: 9px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.filtro_taller:focus,
+.filtro_taller:hover {
+  border-color: var(--gold);
+}
+
+/* Tabla del Taller: subtítulos, estados y botones de acción */
+#tabla-taller td small {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.estado {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.estado.ok {
+  background-color: var(--ok-soft);
+  color: var(--ok);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.estado.bad {
+  background-color: var(--bad-soft);
+  color: var(--bad);
+  border: 1px solid rgba(244, 63, 94, 0.4);
+}
+
+.estado.warn {
+  background-color: var(--warn-soft);
+  color: var(--warn);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.table td.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.table td.acciones button[data-accion="finalizar"] {
+  background-color: var(--ok-soft);
+  color: var(--ok);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.table td.acciones button[data-accion="finalizar"]:hover {
+  background-color: var(--ok);
+  color: #0b131e;
+}
+
+.table td.acciones button[data-accion="noreparable"] {
+  background-color: var(--bad-soft);
+  color: var(--bad);
+  border-color: rgba(244, 63, 94, 0.4);
+}
+
+.table td.acciones button[data-accion="noreparable"]:hover {
+  background-color: var(--bad);
+  color: #ffffff;
+}
+
+/* Modales del Taller (Nueva Reparación e Historial) */
+.Modal_Contenido.ancho {
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.Modal_Contenido textarea {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.Modal_Contenido textarea:focus {
+  border-color: var(--gold);
+}
+
+.fila_repuesto {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.fila_repuesto select {
+  flex: 1;
+  min-width: 0;
+}
+
+.fila_repuesto input {
+  width: 80px;
+  text-align: center;
+}
+
+.fila_repuesto button {
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.lista_repuestos {
+  list-style: none;
+  font-size: 0.9rem;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.lista_repuestos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.lista_repuestos li:last-child {
+  border-bottom: none;
+}
+
+.lista_repuestos .vacio {
+  color: var(--muted);
+  justify-content: center;
+  font-style: italic;
+}
+
+.lista_repuestos button[data-quitar] {
+  margin-top: 0;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  background-color: var(--bad-soft);
+  color: var(--bad);
+  border-color: rgba(244, 63, 94, 0.4);
+}
+
+.lista_repuestos button[data-quitar]:hover {
+  background-color: var(--bad);
+  color: #ffffff;
+}
+
+.total_orden {
+  text-align: right;
+  font-size: 1.05rem;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+}
+
+.total_orden strong {
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+.msg_error {
+  color: var(--bad);
+  min-height: 1.2em;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+#historialCuerpo p {
+  margin-top: 12px;
+  text-align: right;
+  color: var(--muted);
+}
+
+#historialCuerpo p strong {
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+#cerrarHistorialBtn {
+  width: 100%;
+  margin-top: 16px;
+}
 
 /* =========================================
    DISEÑO RESPONSIVO (PANTALLAS PEQUEÑAS)
