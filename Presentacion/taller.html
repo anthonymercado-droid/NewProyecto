@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COINOVA | Taller</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>COINOVA</h1>
+        <hr>
+    </header>
+
+    <main class="container">
+        <aside>
+            <button type="button" id="maquinasBtn">Taller</button>
+            <button type="button" id="inventarioBtn">Inventario</button>
+            <button type="button" id="volverBtn">Volver al menu</button>
+        </aside>
+
+        <section>
+            <!-- Resumen del taller -->
+            <div class="dash">
+                <div class="card">
+                    <h2>Máquinas Operativas</h2>
+                    <p id="Taller-Operativas">--</p>
+                </div>
+                <div class="card">
+                    <h2>Máquinas No Operativas</h2>
+                    <p id="Taller-NoOperativas">--</p>
+                </div>
+                <div class="card">
+                    <h2>En Reparación</h2>
+                    <p id="Taller-EnReparacion">--</p>
+                </div>
+                <div class="card">
+                    <h2>Costo Total de Reparaciones</h2>
+                    <p id="Taller-CostoTotal">--</p>
+                </div>
+            </div>
+
+            <!-- Barra de herramientas -->
+            <div class="container_header">
+                <div>
+                    <button type="button" id="nuevaOrdenBtn">Nueva reparación</button>
+                    <select id="filtroEstado" class="filtro_taller">
+                        <option value="">Todos los estados</option>
+                        <option value="En reparación">En reparación</option>
+                        <option value="Finalizada">Finalizada</option>
+                        <option value="No reparable">No reparable</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="search" id="buscarTaller" placeholder="Serial, técnico o falla">
+                </div>
+            </div>
+
+            <!-- Órdenes de reparación -->
+            <table id="tabla-taller" class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Máquina</th>
+                        <th>Técnico</th>
+                        <th>Falla</th>
+                        <th>Repuestos usados</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-taller"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal: nueva orden de reparación -->
+    <div id="Modal_Orden" class="Modal">
+        <div class="Modal_Contenido ancho">
+            <h2>Nueva Reparación</h2>
+            <form id="formOrden">
+                <label for="ordenSerial">Máquina:</label>
+                <select id="ordenSerial" required></select>
+
+                <label for="ordenTecnico">Técnico que repara:</label>
+                <input type="text" id="ordenTecnico" required>
+
+                <label for="ordenFalla">Falla / Asunto:</label>
+                <textarea id="ordenFalla" rows="2" required></textarea>
+
+                <label for="ordenRepuesto">Repuestos utilizados:</label>
+                <div class="fila_repuesto">
+                    <select id="ordenRepuesto"></select>
+                    <input type="number" id="ordenCantidad" min="1" value="1">
+                    <button type="button" id="agregarRepuestoOrdenBtn">Agregar</button>
+                </div>
+                <ul id="listaRepuestosOrden" class="lista_repuestos"></ul>
+
+                <label for="ordenManoObra">Mano de obra (RD$):</label>
+                <input type="number" id="ordenManoObra" min="0" step="0.01" value="0">
+
+                <p class="total_orden">Total estimado: <strong id="ordenTotal">RD$ 0.00</strong></p>
+                <p id="ordenError" class="msg_error"></p>
+
+                <button type="submit">Registrar</button>
+                <button type="button" id="cancelarOrdenBtn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: historial de una máquina -->
+    <div id="Modal_Historial" class="Modal">
+        <div class="Modal_Contenido ancho">
+            <h2 id="historialTitulo">Historial</h2>
+            <div id="historialCuerpo"></div>
+            <button type="button" id="cerrarHistorialBtn">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="../Negocio/botones_menu.js"></script>
+    <script src="../Negocio/Taller.js"></script>
+</body>
+
+</html>
